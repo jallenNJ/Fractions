@@ -10,6 +10,9 @@
 class Fraction {
 public:
 
+	Fraction();
+	Fraction(int, int);
+	~Fraction();
 
 	void setNumerator(int num) {
 		fraction[0] = num;
@@ -26,7 +29,7 @@ public:
 		fraction[1] = abs(den);
 	}
 private:
-	int fraction[2];
+	int* fraction;
 	bool isUndefined;
 };
 
