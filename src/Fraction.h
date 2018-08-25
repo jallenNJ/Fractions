@@ -15,6 +15,8 @@ public:
 	Fraction(int, int);
 	~Fraction();
 
+	int findLCM(int);
+	int findGCD(int);
 
 	Fraction operator+(Fraction other) {
 		return addFractions(other);
@@ -27,7 +29,7 @@ public:
 
 	void setDenominator(int den) {
 		if (den == 0) {
-			isUndefined = true;
+			undefined = true;
 			fraction[1] = 1;
 			return;
 		}
@@ -52,6 +54,9 @@ public:
 		return fraction[0] != 0;
 	}
 
+	bool isUndefined() {
+		return undefined;
+	}
 	void scale(int scaleFactor) {
 		fraction[0] *= scaleFactor;
 		fraction[1] *= scaleFactor;
@@ -60,7 +65,7 @@ public:
 	
 private:
 	int fraction[2];
-	bool isUndefined;
+	bool undefined;
 	Fraction addFractions(Fraction);
 
 	bool sameDenominator(Fraction other) {
@@ -70,11 +75,11 @@ private:
 	void addToDenomiator(int increase) {
 		fraction[1] += increase;
 		if (fraction[1] == 0) {
-			isUndefined = true;
+			undefined = true;
 			fraction[1] = 1;
 		}
 		else {
-			isUndefined = false; 
+			undefined = false; 
 		}
 	}
 };
