@@ -1,7 +1,7 @@
 #ifndef FRACTION_H
 #define FRACTION_H
 
-#include <math.h>
+#include <math.h> //For abs()
 
 
 
@@ -10,12 +10,11 @@
 class Fraction {
 public:
 
+	//Constructors and destructors
 	Fraction();
 	Fraction(int, int);
 	~Fraction();
 
-
-	void scale(int);
 
 	Fraction operator+(Fraction other) {
 		return addFractions(other);
@@ -51,6 +50,11 @@ public:
 
 	bool isZero() {
 		return fraction[0] != 0;
+	}
+
+	void scale(int scaleFactor) {
+		fraction[0] *= scaleFactor;
+		fraction[1] *= scaleFactor;
 	}
 
 	
