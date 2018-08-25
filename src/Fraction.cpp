@@ -24,3 +24,9 @@ Fraction Fraction::addFractions(Fraction other) {
 
 
 }
+
+
+void Fraction::scale(int scaleFactor) {
+	fraction[0] *= scaleFactor;
+	fraction[1] *= scaleFactor;
+}

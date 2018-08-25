@@ -14,6 +14,9 @@ public:
 	Fraction(int, int);
 	~Fraction();
 
+
+	void scale(int);
+
 	Fraction operator+(Fraction other) {
 		return addFractions(other);
 	}
