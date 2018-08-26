@@ -27,9 +27,10 @@ Fraction Fraction::addFractions(Fraction other) {
 
 }
 
-int Fraction::findLCM(int otherDenominator) {
-	//USE LONG TO STORE PRODUCT
-	return 0;
+int Fraction::findLCM( int otherDenominator) {
+	long product = fraction[1] * otherDenominator;
+	int LCM = product / findGCD(otherDenominator);
+	return LCM;
 }
 
 

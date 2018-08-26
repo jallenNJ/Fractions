@@ -15,6 +15,10 @@ int main(int argc, char* argv[]) {
 	Fraction gcdTest2(1, 426);
 	assert("Testing GCD where a>b" && gcdTest2.findGCD(71) == 71);
 
+	Fraction lcmTest(1, 8);
+	assert("Testing LCM where a < b" && lcmTest.findLCM(24) == 24);
+	assert("Testing LCM where a = b" && lcmTest.findLCM(8) == 8);
+	assert("Testing LCM where a > b" && lcmTest.findLCM(6) == 24);
 
 	return 0;
 }
