@@ -20,5 +20,20 @@ int main(int argc, char* argv[]) {
 	assert("Testing LCM where a = b" && lcmTest.findLCM(8) == 8);
 	assert("Testing LCM where a > b" && lcmTest.findLCM(6) == 24);
 
+
+	Fraction diffBaseAddition(1, 2);
+	Fraction diffBaseAddition2(1, 4);
+	Fraction diffBaseAdditionResult = diffBaseAddition + diffBaseAddition2;
+	Fraction diffBaseAdditionResult2 = diffBaseAddition2 + diffBaseAddition;
+
+	assert("Adding different base, larger base first" && diffBaseAdditionResult.getNumerator() == 3 && diffBaseAdditionResult.getDenominator() == 4);
+	assert("Adding different base, smaller base first" && diffBaseAdditionResult2.getNumerator() == 3 && diffBaseAdditionResult2.getDenominator() == 4);
+	
+	Fraction divideByZero(1, 0);
+	assert("Checking for intializing with zero being handled" && divideByZero.isUndefined() && divideByZero.getDenominator() != 0);
+
+	Fraction intializedNegativeDenominator(2, -3);
+	assert("Checking for proper handling of negative denomiator being moved to numerator" && intializedNegativeDenominator.getNumerator() < 0 && intializedNegativeDenominator.getDenominator() > 0);
+
 	return 0;
 }

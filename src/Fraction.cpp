@@ -2,15 +2,15 @@
 
 
 Fraction::Fraction() {
+	undefined = false;
 	setNumerator(1);
 	setDenominator(1);
-	undefined = false;
 }
 
 Fraction::Fraction(int num, int den) {
+	undefined = false;
 	setNumerator(num);
 	setDenominator(den);
-	undefined = false;
 }
 
 Fraction::~Fraction() {
@@ -18,11 +18,20 @@ Fraction::~Fraction() {
 }
 
 Fraction Fraction::addFractions(Fraction other) {
+	int thisNumerator = getNumerator();
+	int otherNumerator = other.getNumerator();
+	int sharedDenominator = getDenominator();
 	if (!sameDenominator(other)) {
-		//HANDLE DIFFERENT BASES
+		sharedDenominator = findLCM(other.getDenominator());
+		int ourScale = sharedDenominator / getDenominator();
+		int theirScale = sharedDenominator / other.getDenominator();
+
+		thisNumerator *= ourScale;
+		otherNumerator *= theirScale;
+
 	}
 
-	return Fraction(getNumerator() + other.getNumerator(), getDenominator());
+	return Fraction(thisNumerator + otherNumerator, sharedDenominator);
 
 
 }
