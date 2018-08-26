@@ -55,6 +55,12 @@ int main(int argc, char* argv[]) {
 	zeroFlagTest = zeroFlagTest + -1; 
 	assert("Checking if a fraction sets zero flag when adding a negative number " && zeroFlagTest.isZero());
 
+	Fraction threeFourths(3, 4);
+	assert("Checking toFloat and toDouble with two decimals"&& threeFourths.toFloat() == threeFourths.toDouble() && threeFourths.toDouble() == .75);
+	Fraction oneTenth(1, 10);
+	assert("Checking floating point accuracy of impercise converstion(float)" && oneTenth.toFloat() > .09 && oneTenth.toFloat() < .11);
+	assert("Checking floating point accuracy of impercise converstion(double)" && oneTenth.toDouble() > .09 && oneTenth.toDouble() < .11);
+
 	//If reached return, all unit tests passed. 
 	return 0;
 }

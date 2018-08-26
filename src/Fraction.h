@@ -66,6 +66,14 @@ public:
 		fraction[1] *= scaleFactor;
 	}
 
+	float toFloat() {
+		return (float)getNumerator() / (float)getDenominator();
+	}
+
+	double toDouble() {
+		return (double)getNumerator() / (double)getDenominator();
+	}
+
 	
 private:
 	int fraction[2];
