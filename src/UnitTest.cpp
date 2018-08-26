@@ -42,7 +42,18 @@ int main(int argc, char* argv[]) {
 	assert("Checking for proper handling of negative denomiator being moved to numerator" && intializedNegativeDenominator.getNumerator() < 0 && intializedNegativeDenominator.getDenominator() > 0);
 
 
+	Fraction addingByAnInt(3, 5);
+	addingByAnInt = addingByAnInt + 1;
+	assert("Checking for adding by an int" && addingByAnInt.getNumerator() == 8 && addingByAnInt.getDenominator() == 5);
+	addingByAnInt = addingByAnInt + 2;
+	assert("Checking for adding by an int (second)" && addingByAnInt.getNumerator() == 18 && addingByAnInt.getDenominator() == 5);
 
+	Fraction zeroFlagTest(0, 2);
+	assert("Checking if a fraction set to zero is zero" && zeroFlagTest.isZero());
+	zeroFlagTest= zeroFlagTest+ 1;
+	assert("Checking if a fraction added away from zero clears flag" && zeroFlagTest.isZero() == false);
+	zeroFlagTest = zeroFlagTest + -1; 
+	assert("Checking if a fraction sets zero flag when adding a negative number " && zeroFlagTest.isZero());
 
 	//If reached return, all unit tests passed. 
 	return 0;

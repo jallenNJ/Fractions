@@ -22,6 +22,10 @@ public:
 		return addFractions(other);
 	}
 
+	Fraction operator+(int incrementAmount) {
+		return Fraction(getNumerator() + (incrementAmount * getDenominator()), getDenominator());
+	}
+
 
 	void setNumerator(int num) {
 		fraction[0] = num;
@@ -51,7 +55,7 @@ public:
 	}
 
 	bool isZero() {
-		return fraction[0] != 0;
+		return fraction[0] == 0;
 	}
 
 	bool isUndefined() {
