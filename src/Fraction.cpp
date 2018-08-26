@@ -1,36 +1,48 @@
 #include "Fraction.h"
 
 
+//No arg constructor sets to 1/1 
 Fraction::Fraction() {
 	undefined = false;
 	setNumerator(1);
 	setDenominator(1);
 }
 
+
+//Constructor to intialize a fraction with a set numerator and denominator
 Fraction::Fraction(int num, int den) {
 	undefined = false;
 	setNumerator(num);
 	setDenominator(den);
 }
 
+//Destructor incase its needed
 Fraction::~Fraction() {
 
 }
 
+
 Fraction Fraction::addFractions(Fraction other) {
+	//Get the variables and store in local copy so changes dont effect member variables
 	int thisNumerator = getNumerator();
 	int otherNumerator = other.getNumerator();
 	int sharedDenominator = getDenominator();
-	if (!sameDenominator(other)) {
+
+	if (!sameDenominator(other)) { //If the bases need to be swapped
+		//Find the lowest shared denominator between them
 		sharedDenominator = findLCM(other.getDenominator());
+
+		//Find the scale factor each need to be multipled by to reach there
 		int ourScale = sharedDenominator / getDenominator();
 		int theirScale = sharedDenominator / other.getDenominator();
 
+		//Apply the scaling
 		thisNumerator *= ourScale;
 		otherNumerator *= theirScale;
 
 	}
 
+	//Create new object
 	return Fraction(thisNumerator + otherNumerator, sharedDenominator);
 
 
