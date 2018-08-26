@@ -60,7 +60,9 @@ int main(int argc, char* argv[]) {
 	Fraction oneTenth(1, 10);
 	assert("Checking floating point accuracy of impercise converstion(float)" && oneTenth.toFloat() > .09 && oneTenth.toFloat() < .11);
 	assert("Checking floating point accuracy of impercise converstion(double)" && oneTenth.toDouble() > .09 && oneTenth.toDouble() < .11);
-
+	
+	assert("Checking implict cast (float)" && (float)threeFourths == threeFourths.toFloat());
+	assert("Checking implict cast (double)" && (double)threeFourths == threeFourths.toDouble());
 	//If reached return, all unit tests passed. 
 	return 0;
 }

@@ -73,6 +73,12 @@ public:
 	double toDouble() {
 		return (double)getNumerator() / (double)getDenominator();
 	}
+	operator float() {
+		return toFloat();
+	}
+	operator double() {
+		return toDouble();
+	}
 
 	
 private:
