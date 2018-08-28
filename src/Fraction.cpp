@@ -16,6 +16,36 @@ Fraction::Fraction(int num, int den) {
 	setDenominator(den);
 }
 
+
+Fraction::Fraction(float floatToConvert ) {	
+	undefined = false;
+	float intPortion, decPart;
+	decPart = modff(floatToConvert, &intPortion);
+
+	float newNumerator = 0;
+	int timesLooped = 0;
+	while (decPart > 0) {
+		float toParse = newNumerator + decPart;
+		toParse *= 10;
+		decPart = modff(toParse, &newNumerator);
+		timesLooped++;
+	}
+
+	setDenominator(pow(10, timesLooped));
+	setNumerator(newNumerator + (intPortion * getDenominator()));
+	reduceFraction();
+	//decPart *= (10000);
+	
+
+	//long newNumerator = decPart;
+	//long wholeNumber = intPortion;
+	//setDenominator(10000);
+	//setNumerator(newNumerator * (wholeNumber* getDenominator()));
+
+
+}
+
+
 //Destructor incase its needed
 Fraction::~Fraction() {
 

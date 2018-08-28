@@ -1,5 +1,13 @@
 #include "Fraction.h"
 #include <assert.h> //For unit testing macro
+
+
+void checkAddition();
+void checkMultiplication();
+void checkIntialization();
+void checkConversations();
+void checkKeeperFunctions();
+void checkMiscFunctions();
 int main(int argc, char* argv[]) {
 
 	checkAddition();
@@ -8,7 +16,6 @@ int main(int argc, char* argv[]) {
 	checkConversations();
 	checkKeeperFunctions();
 	checkMiscFunctions();
-
 	
 	//If reached return, all unit tests passed. 
 	return 0;
@@ -62,6 +69,14 @@ void checkIntialization() {
 
 	Fraction intializedNegativeDenominator(2, -3);
 	assert("Checking for proper handling of negative denomiator being moved to numerator" && intializedNegativeDenominator.getNumerator() < 0 && intializedNegativeDenominator.getDenominator() > 0);
+
+
+	Fraction floatConstructorTest(1.75);
+	assert("Checking for intiazling from a float" && floatConstructorTest.getNumerator() ==7 && floatConstructorTest.getDenominator() ==4);
+	Fraction floatConstructorTest2(.33);
+	assert("Checking for intiazling from a float(2)" && floatConstructorTest2.getNumerator() == 33 && floatConstructorTest2.getDenominator() == 100);
+	Fraction floatConstructorTest3(.4);
+	assert("Checking for intiazling from a float(3)" && floatConstructorTest3.getNumerator() == 2 && floatConstructorTest3.getDenominator() == 5);
 
 }
 

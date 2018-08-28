@@ -13,6 +13,7 @@ public:
 	//Constructors and destructors
 	Fraction();
 	Fraction(int, int);
+	Fraction(float);
 	~Fraction();
 
 	int findLCM(int);
@@ -98,6 +99,17 @@ private:
 		}
 		else {
 			undefined = false; 
+		}
+	}
+
+	void reduceFraction() {
+		while (true) {
+			int newGcd = findGCD(getNumerator());
+			if (newGcd <= 1) {
+				break;
+			}
+			setNumerator(getNumerator() / newGcd);
+			setDenominator(getDenominator() / newGcd);
 		}
 	}
 };
