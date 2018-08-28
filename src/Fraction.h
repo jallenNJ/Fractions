@@ -19,6 +19,8 @@ public:
 	int findLCM(int);
 	int findGCD(int);
 
+	bool reduceBy(int);
+
 	Fraction operator+(Fraction other) {
 		return addFractions(other);
 	}

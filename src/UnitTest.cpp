@@ -116,4 +116,12 @@ void checkMiscFunctions() {
 	assert("Testing LCM where a = b" && lcmTest.findLCM(8) == 8);
 	assert("Testing LCM where a > b" && lcmTest.findLCM(6) == 24);
 
+
+	Fraction scaleDownTest(6, 8);
+	scaleDownTest.reduceBy(3);
+	assert("Testing scale down(Denom not scalable)" && scaleDownTest.getNumerator() == 6 && scaleDownTest.getDenominator() == 8);
+	scaleDownTest.reduceBy(4);
+	assert("Testing scale down(Num not scalable)" && scaleDownTest.getNumerator() == 6 && scaleDownTest.getDenominator() == 8);
+	scaleDownTest.reduceBy(2);
+	assert("Testing scale down(scaleable)" && scaleDownTest.getNumerator() == 3 && scaleDownTest.getDenominator() == 4);
 }

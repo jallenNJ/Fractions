@@ -107,5 +107,12 @@ int Fraction::findGCD(int otherDenominator) {
 			otherDenominator -= denominator;
 		}
 	}
+}
 
+bool Fraction::reduceBy(int scaleDown) {
+	if (getNumerator() % scaleDown != 0 || getDenominator() % scaleDown != 0) {
+		return false;
+	}
+	setNumerator(getNumerator() / scaleDown);
+	setDenominator(getDenominator() / scaleDown);
 }
