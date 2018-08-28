@@ -34,14 +34,6 @@ Fraction::Fraction(float floatToConvert ) {
 	setDenominator(pow(10, timesLooped));
 	setNumerator(newNumerator + (intPortion * getDenominator()));
 	reduceFraction();
-	//decPart *= (10000);
-	
-
-	//long newNumerator = decPart;
-	//long wholeNumber = intPortion;
-	//setDenominator(10000);
-	//setNumerator(newNumerator * (wholeNumber* getDenominator()));
-
 
 }
 
