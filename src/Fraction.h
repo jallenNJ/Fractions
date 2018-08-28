@@ -3,10 +3,6 @@
 
 #include <math.h> //For abs()
 
-
-
-
-
 class Fraction {
 public:
 
