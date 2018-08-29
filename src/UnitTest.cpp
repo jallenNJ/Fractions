@@ -1,7 +1,6 @@
 #include "Fraction.h"
 #include <assert.h> //For unit testing macro
 
-
 void checkAddition();
 void checkMultiplication();
 void checkIntialization();
@@ -20,7 +19,6 @@ int main(int argc, char* argv[]) {
 	//If reached return, all unit tests passed. 
 	return 0;
 }
-
 
 
 void checkAddition() {

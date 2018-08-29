@@ -124,7 +124,4 @@ private:
 };
 
 
-
-
-
 #endif // !FRACTION_H
