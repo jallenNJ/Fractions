@@ -79,6 +79,15 @@ public:
 		return toDouble();
 	}
 
+	Fraction operator*(int other) {
+		Fraction multFraction(getNumerator() * other , getDenominator());
+		return multFraction;
+	}
+	Fraction operator*(Fraction other) {
+		Fraction multFraction(getNumerator() * other.getNumerator(), getDenominator() * other.getDenominator());
+		return multFraction;
+	}
+
 	
 private:
 	int fraction[2];

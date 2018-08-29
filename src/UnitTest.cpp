@@ -56,6 +56,15 @@ void checkMultiplication() {
 	Fraction scaleTest(2, 5);
 	scaleTest.scale(2);
 	assert("Scaling frac by 2" && scaleTest.getNumerator() == 4 && scaleTest.getDenominator() == 10);
+
+	Fraction multOperatorInt(5, 6);
+	multOperatorInt = multOperatorInt * 3;
+	assert("Mult operation overload test (int)" && multOperatorInt.getNumerator() == 15 && multOperatorInt.getDenominator() == 6);
+
+	Fraction twoFifths(2, 5);
+	Fraction threeFifths(3, 5);
+	Fraction multFractionsResult = twoFifths * threeFifths;
+	assert("Mult operation overload test (Fraction)" && multFractionsResult.getNumerator() == 6 && multFractionsResult.getDenominator() == 25);
 }
 
 void checkIntialization() {
