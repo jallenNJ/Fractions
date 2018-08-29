@@ -88,7 +88,9 @@ public:
 		return multFraction;
 	}
 
-	
+	Fraction getReciprical();
+
+	void applyReciprical();
 private:
 	int fraction[2];
 	bool undefined;

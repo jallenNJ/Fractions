@@ -117,3 +117,54 @@ bool Fraction::reduceBy(int scaleDown) {
 	setDenominator(getDenominator() / scaleDown);
 	return true;
 }
+
+
+Fraction Fraction::getReciprical() {
+
+	int newNumerator = getDenominator();
+	int newDenominator = getNumerator();
+
+
+	if (undefined) {
+		newNumerator = 0;
+	}
+
+	if (newDenominator < 0) {
+		newDenominator = abs(newDenominator);
+		newNumerator *= -1;
+	}
+
+	Fraction reciprical = Fraction(newNumerator, newDenominator);
+	return reciprical;
+}
+
+void Fraction::applyReciprical() {
+	
+	int toDenom = getNumerator();
+	bool applyNegative = false;
+	if (toDenom < 0) {
+		toDenom = abs(toDenom);
+		applyNegative = true;
+	}
+
+	if (undefined) {
+		undefined = false;
+		setNumerator(0);
+	}
+	else {
+		int toNum = getDenominator();
+		if (applyNegative) {
+			toNum *= -1;
+		}
+		setNumerator(toNum);
+	}
+
+	if (toDenom == 0) {
+		undefined = true;
+		setDenominator(1);
+	}
+	else {
+		setDenominator(toDenom);
+
+	}
+}

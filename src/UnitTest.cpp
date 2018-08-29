@@ -133,4 +133,11 @@ void checkMiscFunctions() {
 	assert("Testing scale down(Num not scalable)" && scaleDownTest.getNumerator() == 6 && scaleDownTest.getDenominator() == 8);
 	scaleDownTest.reduceBy(2);
 	assert("Testing scale down(scaleable)" && scaleDownTest.getNumerator() == 3 && scaleDownTest.getDenominator() == 4);
+
+
+	Fraction recipTest(5, 8);
+	Fraction recipTestResult = recipTest.getReciprical();
+	assert("Reciprical test" && recipTestResult.getNumerator() == recipTest.getDenominator() && recipTestResult.getDenominator() == recipTest.getNumerator());
+	recipTestResult.applyReciprical();
+	assert("Reciprical test back to beginning" && recipTestResult.getNumerator() == recipTest.getNumerator() && recipTestResult.getDenominator() == recipTest.getDenominator());
 }
