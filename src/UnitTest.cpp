@@ -82,9 +82,9 @@ void checkIntialization() {
 
 	Fraction floatConstructorTest(1.75);
 	assert("Checking for intiazling from a float" && floatConstructorTest.getNumerator() ==7 && floatConstructorTest.getDenominator() ==4);
-	Fraction floatConstructorTest2(.33);
+	Fraction floatConstructorTest2((float).33);
 	assert("Checking for intiazling from a float(2)" && floatConstructorTest2.getNumerator() == 33 && floatConstructorTest2.getDenominator() == 100);
-	Fraction floatConstructorTest3(.4);
+	Fraction floatConstructorTest3((float).4);
 	assert("Checking for intiazling from a float(3)" && floatConstructorTest3.getNumerator() == 2 && floatConstructorTest3.getDenominator() == 5);
 
 }

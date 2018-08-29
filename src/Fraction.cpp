@@ -31,8 +31,8 @@ Fraction::Fraction(float floatToConvert ) {
 		timesLooped++;
 	}
 
-	setDenominator(pow(10, timesLooped));
-	setNumerator(newNumerator + (intPortion * getDenominator()));
+	setDenominator((int)pow(10, timesLooped));
+	setNumerator((int)newNumerator + ((int)intPortion * getDenominator()));
 	reduceFraction();
 
 }
@@ -115,4 +115,5 @@ bool Fraction::reduceBy(int scaleDown) {
 	}
 	setNumerator(getNumerator() / scaleDown);
 	setDenominator(getDenominator() / scaleDown);
+	return true;
 }
